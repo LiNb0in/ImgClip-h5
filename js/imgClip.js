@@ -56,12 +56,13 @@ ImgClip.prototype = {
 		this.cutScale = parseFloat(opt.cutScale);
 		this.winSize = { w: view().w, h: view().h-this.paddB};
 		opt.cutW == 'winW' ? (this.cutW = this.winSize.w) : (this.cutW = Number(opt.cutW));
+		// 根据比例算出裁剪高度
 		var hh = parseInt(this.cutW * this.cutScale);
 		this.cutSize = {
 			w: this.cutW,
 			h: hh,
-			t: (this.winSize.h - hh)/2,
-			l: (this.winSize.w - this.cutW)/2
+			t: (this.winSize.h - hh)/2,// 上下居中
+			l: (this.winSize.w - this.cutW)/2 //左右居中
 		};
 
 		// set canvas
