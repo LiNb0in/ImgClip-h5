@@ -62,12 +62,12 @@ ImgClip.prototype = {
 			w: this.cutW,
 			h: hh,
 			t: (this.winSize.h - hh)/2,// 上下居中
-			l: (this.winSize.w - this.cutW)/2 //左右居中
+			l: (this.winSize.w - this.cutW)/2 // 左右居中
 		};
 
 		// set canvas
-		this.setCanvas(this.canvas);
-		this.clearCanvas(this.canvas);
+		this.setCanvas(this.canvas);// 设置画布大小
+		this.clearCanvas(this.canvas);// 清除画布
 		this.ctx.fillStyle = 'rgba(0,0,0,0.3)';
 		this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 		(opt.rotateR) && (this.rotateR = this.getObj(opt.rotateR));
